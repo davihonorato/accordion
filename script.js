@@ -5,11 +5,13 @@ categoryBox.forEach((element) => {
         // pega a lista (ul) que é "irmão" do elemento clicado
         let list = e.currentTarget.nextElementSibling;
         
-        // troca os valores do "display" em css
-        if(list.style.display == "block") {
-            list.style.display = "none";
-        }else {
-            list.style.display = "block";
-        }
+        // pega a box (.box) que é o "pai" do elemento clicado
+        let box = e.currentTarget.parentElement;
+        
+        // troca os valores da classe da lista (ul), ou seja, esconder o conteúdo para mostrar o conteúdo e vice-versa
+        list.classList.toggle("hide-info");
+
+        // troca os valores da classe do "box" (esconder o conteúdo para mostrar o conteúdo e vice-versa)
+        box.classList.toggle("show-info");
     })
 });
